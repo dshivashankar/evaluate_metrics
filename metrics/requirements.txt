@@ -1,0 +1,3 @@
+evaluate==0.1.0
+sklearn
+datasets~=2.0
