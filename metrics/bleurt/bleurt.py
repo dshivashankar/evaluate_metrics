@@ -18,10 +18,10 @@ import os
 import datasets
 from bleurt import score  # From: git+https://github.com/google-research/bleurt.git
 
-import evaluate
+import evaluate_metrics
 
 
-logger = evaluate.logging.get_logger(__name__)
+logger = evaluate_metrics.logging.get_logger(__name__)
 
 
 _CITATION = """\
@@ -76,11 +76,11 @@ CHECKPOINT_URLS = {
 }
 
 
-@evaluate.utils.file_utils.add_start_docstrings(_DESCRIPTION, _KWARGS_DESCRIPTION)
-class BLEURT(evaluate.EvaluationModule):
+@evaluate_metrics.utils.file_utils.add_start_docstrings(_DESCRIPTION, _KWARGS_DESCRIPTION)
+class BLEURT(evaluate_metrics.EvaluationModule):
     def _info(self):
 
-        return evaluate.EvaluationModuleInfo(
+        return evaluate_metrics.EvaluationModuleInfo(
             description=_DESCRIPTION,
             citation=_CITATION,
             homepage="https://github.com/google-research/bleurt",

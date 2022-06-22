@@ -16,7 +16,7 @@
 import datasets
 from sklearn.metrics import f1_score
 
-import evaluate
+import evaluate_metrics
 
 
 _DESCRIPTION = """
@@ -96,10 +96,10 @@ _CITATION = """
 """
 
 
-@evaluate.utils.file_utils.add_start_docstrings(_DESCRIPTION, _KWARGS_DESCRIPTION)
-class F1(evaluate.EvaluationModule):
+@evaluate_metrics.utils.file_utils.add_start_docstrings(_DESCRIPTION, _KWARGS_DESCRIPTION)
+class F1(evaluate_metrics.EvaluationModule):
     def _info(self):
-        return evaluate.EvaluationModuleInfo(
+        return evaluate_metrics.EvaluationModuleInfo(
             description=_DESCRIPTION,
             citation=_CITATION,
             inputs_description=_KWARGS_DESCRIPTION,

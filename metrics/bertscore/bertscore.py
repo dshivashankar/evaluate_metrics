@@ -20,7 +20,7 @@ import bert_score
 import datasets
 from packaging import version
 
-import evaluate
+import evaluate_metrics
 
 
 @contextmanager
@@ -97,10 +97,10 @@ Examples:
 """
 
 
-@evaluate.utils.file_utils.add_start_docstrings(_DESCRIPTION, _KWARGS_DESCRIPTION)
-class BERTScore(evaluate.EvaluationModule):
+@evaluate_metrics.utils.file_utils.add_start_docstrings(_DESCRIPTION, _KWARGS_DESCRIPTION)
+class BERTScore(evaluate_metrics.EvaluationModule):
     def _info(self):
-        return evaluate.EvaluationModuleInfo(
+        return evaluate_metrics.EvaluationModuleInfo(
             description=_DESCRIPTION,
             citation=_CITATION,
             homepage="https://github.com/Tiiiger/bert_score",

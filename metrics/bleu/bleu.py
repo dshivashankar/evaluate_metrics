@@ -15,7 +15,7 @@
 
 import datasets
 
-import evaluate
+import evaluate_metrics
 
 from .nmt_bleu import compute_bleu  # From: https://github.com/tensorflow/nmt/blob/master/nmt/scripts/bleu.py
 from .tokenizer_13a import Tokenizer13a
@@ -84,10 +84,10 @@ Examples:
 """
 
 
-@evaluate.utils.file_utils.add_start_docstrings(_DESCRIPTION, _KWARGS_DESCRIPTION)
-class Bleu(evaluate.EvaluationModule):
+@evaluate_metrics.utils.file_utils.add_start_docstrings(_DESCRIPTION, _KWARGS_DESCRIPTION)
+class Bleu(evaluate_metrics.EvaluationModule):
     def _info(self):
-        return evaluate.EvaluationModuleInfo(
+        return evaluate_metrics.EvaluationModuleInfo(
             description=_DESCRIPTION,
             citation=_CITATION,
             inputs_description=_KWARGS_DESCRIPTION,

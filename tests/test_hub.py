@@ -4,7 +4,7 @@ from unittest.mock import patch
 import pytest
 import requests
 
-from evaluate.hub import get_allowed_tasks, push_to_hub
+from evaluate_metrics.hub import get_allowed_tasks, push_to_hub
 from tests.test_metric import DummyMetric
 
 

@@ -16,7 +16,7 @@
 import datasets
 from sklearn.metrics import recall_score
 
-import evaluate
+import evaluate_metrics
 
 
 _DESCRIPTION = """
@@ -92,10 +92,10 @@ _CITATION = """
 """
 
 
-@evaluate.utils.file_utils.add_start_docstrings(_DESCRIPTION, _KWARGS_DESCRIPTION)
-class Recall(evaluate.EvaluationModule):
+@evaluate_metrics.utils.file_utils.add_start_docstrings(_DESCRIPTION, _KWARGS_DESCRIPTION)
+class Recall(evaluate_metrics.EvaluationModule):
     def _info(self):
-        return evaluate.EvaluationModuleInfo(
+        return evaluate_metrics.EvaluationModuleInfo(
             description=_DESCRIPTION,
             citation=_CITATION,
             inputs_description=_KWARGS_DESCRIPTION,

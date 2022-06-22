@@ -8,7 +8,7 @@ from unittest import TestCase
 import pytest
 from datasets.features import Features, Sequence, Value
 
-from evaluate.module import EvaluationModule, EvaluationModuleInfo
+from evaluate_metrics.module import EvaluationModule, EvaluationModuleInfo
 
 from .utils import require_tf, require_torch
 

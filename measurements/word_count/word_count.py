@@ -12,7 +12,7 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 
-import evaluate
+import evaluate_metrics
 import datasets
 from sklearn.feature_extraction.text import CountVectorizer
 
@@ -38,13 +38,13 @@ Examples:
 """
 _CITATION = ""
 
-@evaluate.utils.file_utils.add_start_docstrings(_DESCRIPTION, _KWARGS_DESCRIPTION)
-class WordCount(evaluate.EvaluationModule):
+@evaluate_metrics.utils.file_utils.add_start_docstrings(_DESCRIPTION, _KWARGS_DESCRIPTION)
+class WordCount(evaluate_metrics.EvaluationModule):
     """This measurement returns the total number of words and the number of unique words
      in the input string(s)."""
 
     def _info(self):
-        return evaluate.EvaluationModuleInfo(
+        return evaluate_metrics.EvaluationModuleInfo(
             # This is the description that will appear on the modules page.
             module_type="measurement",
             description=_DESCRIPTION,

@@ -12,12 +12,12 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 
-import evaluate
+import evaluate_metrics
 import datasets
 from collections import Counter
 import hashlib
 
-logger = evaluate.logging.get_logger(__name__)
+logger = evaluate_metrics.logging.get_logger(__name__)
 
 _DESCRIPTION = """
 Returns the duplicate fraction of duplicate strings in the input.
@@ -51,13 +51,13 @@ def get_hash(example):
     """Get the hash of a string"""
     return hashlib.md5(example.strip().encode("utf-8")).hexdigest()
 
-@evaluate.utils.file_utils.add_start_docstrings(_DESCRIPTION, _KWARGS_DESCRIPTION)
-class TextDuplicates(evaluate.EvaluationModule):
+@evaluate_metrics.utils.file_utils.add_start_docstrings(_DESCRIPTION, _KWARGS_DESCRIPTION)
+class TextDuplicates(evaluate_metrics.EvaluationModule):
     """This measurement returns the duplicate strings contained in the input(s)."""
 
     def _info(self):
         # TODO: Specifies the evaluate.EvaluationModuleInfo object
-        return evaluate.EvaluationModuleInfo(
+        return evaluate_metrics.EvaluationModuleInfo(
             # This is the description that will appear on the modules page.
             module_type="measurement",
             description=_DESCRIPTION,

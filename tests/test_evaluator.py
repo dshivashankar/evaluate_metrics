@@ -19,7 +19,7 @@ from unittest import TestCase
 from datasets import load_dataset
 from transformers import AutoModelForSequenceClassification, AutoTokenizer, pipeline
 
-from evaluate import TextClassificationEvaluator, evaluator, load
+from evaluate_metrics import TextClassificationEvaluator, evaluator, load
 
 
 class TestEvaluator(TestCase):

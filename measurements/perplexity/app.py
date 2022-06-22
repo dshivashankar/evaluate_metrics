@@ -1,6 +1,6 @@
-import evaluate
-from evaluate.utils import launch_gradio_widget
+import evaluate_metrics
+from evaluate_metrics.utils import launch_gradio_widget
 
 
-module = evaluate.load("perplexity", module_type= "measurement")
+module = evaluate_metrics.load("perplexity", module_type= "measurement")
 launch_gradio_widget(module)

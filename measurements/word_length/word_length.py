@@ -13,7 +13,7 @@
 # limitations under the License.
 
 from nltk import word_tokenize
-import evaluate
+import evaluate_metrics
 import datasets
 from statistics import mean
 
@@ -49,13 +49,13 @@ year={2020}
 }
 """
 
-@evaluate.utils.file_utils.add_start_docstrings(_DESCRIPTION, _KWARGS_DESCRIPTION)
-class WordLength(evaluate.EvaluationModule):
+@evaluate_metrics.utils.file_utils.add_start_docstrings(_DESCRIPTION, _KWARGS_DESCRIPTION)
+class WordLength(evaluate_metrics.EvaluationModule):
     """This measurement returns the average number of words in the input string(s)."""
 
     def _info(self):
         # TODO: Specifies the evaluate.EvaluationModuleInfo object
-        return evaluate.EvaluationModuleInfo(
+        return evaluate_metrics.EvaluationModuleInfo(
             # This is the description that will appear on the modules page.
             module_type="measurement",
             description=_DESCRIPTION,

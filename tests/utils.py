@@ -8,7 +8,7 @@ from enum import Enum
 from pathlib import Path
 from unittest.mock import patch
 
-from evaluate import config
+from evaluate_metrics import config
 
 
 def parse_flag_from_env(key, default=False):

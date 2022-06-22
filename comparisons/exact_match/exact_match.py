@@ -16,7 +16,7 @@
 import datasets
 import numpy as np
 
-import evaluate
+import evaluate_metrics
 
 
 _DESCRIPTION = """
@@ -44,10 +44,10 @@ _CITATION = """
 """
 
 
-@evaluate.utils.file_utils.add_start_docstrings(_DESCRIPTION, _KWARGS_DESCRIPTION)
-class ExactMatch(evaluate.EvaluationModule):
+@evaluate_metrics.utils.file_utils.add_start_docstrings(_DESCRIPTION, _KWARGS_DESCRIPTION)
+class ExactMatch(evaluate_metrics.EvaluationModule):
     def _info(self):
-        return evaluate.EvaluationModuleInfo(
+        return evaluate_metrics.EvaluationModuleInfo(
             module_type="comparison",
             description=_DESCRIPTION,
             citation=_CITATION,

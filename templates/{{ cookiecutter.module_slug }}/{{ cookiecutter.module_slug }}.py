@@ -13,7 +13,7 @@
 # limitations under the License.
 """TODO: Add a description here."""
 
-import evaluate
+import evaluate_metrics
 import datasets
 
 
@@ -57,13 +57,13 @@ Examples:
 BAD_WORDS_URL = "http://url/to/external/resource/bad_words.txt"
 
 
-@evaluate.utils.file_utils.add_start_docstrings(_DESCRIPTION, _KWARGS_DESCRIPTION)
+@evaluate_metrics.utils.file_utils.add_start_docstrings(_DESCRIPTION, _KWARGS_DESCRIPTION)
 class {{ cookiecutter.module_class_name }}(evaluate.EvaluationModule):
     """TODO: Short description of my evaluation module."""
 
     def _info(self):
         # TODO: Specifies the evaluate.EvaluationModuleInfo object
-        return evaluate.EvaluationModuleInfo(
+        return evaluate_metrics.EvaluationModuleInfo(
             # This is the description that will appear on the modules page.
             module_type="{{ cookiecutter.module_type }}",
             description=_DESCRIPTION,

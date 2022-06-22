@@ -5,14 +5,14 @@ from unittest import TestCase
 
 import pytest
 
-import evaluate
-from evaluate.loading import (
+import evaluate_metrics
+from evaluate_metrics.loading import (
     CachedEvaluationModuleFactory,
     GithubEvaluationModuleFactory,
     HubEvaluationModuleFactory,
     LocalEvaluationModuleFactory,
 )
-from evaluate.utils.file_utils import DownloadConfig
+from evaluate_metrics.utils.file_utils import DownloadConfig
 
 from .utils import OfflineSimulationMode, offline
 
@@ -56,7 +56,7 @@ class ModuleFactoryTest(TestCase):
         self.hf_modules_cache = tempfile.mkdtemp()
         self.cache_dir = tempfile.mkdtemp()
         self.download_config = DownloadConfig(cache_dir=self.cache_dir)
-        self.dynamic_modules_path = evaluate.loading.init_dynamic_modules(
+        self.dynamic_modules_path = evaluate_metrics.loading.init_dynamic_modules(
             name="test_datasets_modules_" + os.path.basename(self.hf_modules_cache),
             hf_modules_cache=self.hf_modules_cache,
         )

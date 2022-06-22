@@ -1,6 +1,6 @@
-import evaluate
-from evaluate.utils import launch_gradio_widget
+import evaluate_metrics
+from evaluate_metrics.utils import launch_gradio_widget
 
 
-module = evaluate.load("word_count")
+module = evaluate_metrics.load("word_count")
 launch_gradio_widget(module)

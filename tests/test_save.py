@@ -4,7 +4,7 @@ import tempfile
 from pathlib import Path
 from unittest import TestCase
 
-import evaluate
+import evaluate_metrics
 
 
 result_dict = {"metric": 1.0, "model_name": "x"}
@@ -20,7 +20,7 @@ class TestSave(TestCase):
         shutil.rmtree(self.save_path)
 
     def test_save_to_folder(self):
-        file_path = evaluate.save(self.save_path, **result_dict)
+        file_path = evaluate_metrics.save(self.save_path, **result_dict)
         with open(file_path, "r") as f:
             loaded_result_dict = json.load(f)
         for key in SAVE_EXTRA_KEYS:
@@ -28,7 +28,7 @@ class TestSave(TestCase):
         self.assertDictEqual(result_dict, loaded_result_dict)
 
     def test_save_to_folder_nested(self):
-        file_path = evaluate.save(self.save_path / "sub_dir1/sub_dir2", **result_dict)
+        file_path = evaluate_metrics.save(self.save_path / "sub_dir1/sub_dir2", **result_dict)
         with open(file_path, "r") as f:
             loaded_result_dict = json.load(f)
         for key in SAVE_EXTRA_KEYS:
@@ -36,7 +36,7 @@ class TestSave(TestCase):
         self.assertDictEqual(result_dict, loaded_result_dict)
 
     def test_save_to_file(self):
-        _ = evaluate.save(self.save_path / "test.json", **result_dict)
+        _ = evaluate_metrics.save(self.save_path / "test.json", **result_dict)
         with open(self.save_path / "test.json", "r") as f:
             loaded_result_dict = json.load(f)
         for key in SAVE_EXTRA_KEYS:

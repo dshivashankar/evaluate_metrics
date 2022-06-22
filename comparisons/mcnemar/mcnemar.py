@@ -16,7 +16,7 @@
 import datasets
 from scipy.stats import chi2
 
-import evaluate
+import evaluate_metrics
 
 
 _DESCRIPTION = """
@@ -60,10 +60,10 @@ _CITATION = """
 """
 
 
-@evaluate.utils.file_utils.add_start_docstrings(_DESCRIPTION, _KWARGS_DESCRIPTION)
-class McNemar(evaluate.EvaluationModule):
+@evaluate_metrics.utils.file_utils.add_start_docstrings(_DESCRIPTION, _KWARGS_DESCRIPTION)
+class McNemar(evaluate_metrics.EvaluationModule):
     def _info(self):
-        return evaluate.EvaluationModuleInfo(
+        return evaluate_metrics.EvaluationModuleInfo(
             module_type="comparison",
             description=_DESCRIPTION,
             citation=_CITATION,

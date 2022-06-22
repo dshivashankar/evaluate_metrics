@@ -19,8 +19,8 @@ import torch
 from torch.nn import CrossEntropyLoss
 from transformers import AutoModelForCausalLM, AutoTokenizer
 
-import evaluate
-from evaluate import logging
+import evaluate_metrics
+from evaluate_metrics import logging
 
 
 _CITATION = """\
@@ -84,10 +84,10 @@ Examples:
 """
 
 
-@evaluate.utils.file_utils.add_start_docstrings(_DESCRIPTION, _KWARGS_DESCRIPTION)
-class Perplexity(evaluate.EvaluationModule):
+@evaluate_metrics.utils.file_utils.add_start_docstrings(_DESCRIPTION, _KWARGS_DESCRIPTION)
+class Perplexity(evaluate_metrics.EvaluationModule):
     def _info(self):
-        return evaluate.EvaluationModuleInfo(
+        return evaluate_metrics.EvaluationModuleInfo(
             module_type="measurement",
             description=_DESCRIPTION,
             citation=_CITATION,
